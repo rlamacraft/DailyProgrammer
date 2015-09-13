@@ -1,14 +1,14 @@
 import Foundation
 
-func input(text:String) -> String {
+/*func input(text:String) -> String {
     print(text)
     var keyboard = NSFileHandle.fileHandleWithStandardInput()
     var inputData = keyboard.availableData
     return NSString(data: inputData, encoding:NSUTF8StringEncoding)
-}
+}*/
 
-func quickSort(list: Float[]) ->Float[] {
-    let listLength = countElements(list)
+func quickSort(list: [Float]) -> [Float] {
+    let listLength = count(list)
     if listLength <= 1 {
         return list
     } else if listLength == 2 {
@@ -21,9 +21,9 @@ func quickSort(list: Float[]) ->Float[] {
     } else { //listLength >= 3
         //recursive call
         let pivot = list[0]
-        var list_S: Float[] = []
-        var list_G: Float[] = []
-        for eachNum in 1..listLength {
+        var list_S: [Float] = []
+        var list_G: [Float] = []
+        for(var eachNum = 0; eachNum < listLength; ++eachNum) {
             if list[eachNum] < pivot {
                 list_S.append(list[eachNum])
             } else {
@@ -37,5 +37,5 @@ func quickSort(list: Float[]) ->Float[] {
     }
 }
 
-let initialList:Float[] = [3.0,2.0,1.0,12.3,-2.4]
+let initialList:[Float] = [3.0,2.0,1.0,12.3,-2.4]
 let sortedList = quickSort(initialList)
